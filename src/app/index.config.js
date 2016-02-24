@@ -10,13 +10,8 @@
     function config($logProvider, DSProvider, DSHttpAdapterProvider) {
         // Enable log
         $logProvider.debugEnabled(true);
-
-        angular.extend(DSProvider.defaults, {
-            useFilter: true
-        });
-
+        
         angular.extend(DSHttpAdapterProvider.defaults, {
-            useFilter: true,
             default: true,
             deserialize: function(resourceConfig, data) {
                 return !data ? data :
